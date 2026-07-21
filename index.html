@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ospaggi</title>
+<style>
+@font-face {
+    font-family: "Pretendard";
+    src: url("assets/fonts/Pretendard-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Pretendard";
+    src: url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "D2Coding";
+    src: url("assets/fonts/D2Coding.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --bg: #000000;
+    --surface: #080808;
+    --surface-strong: #101010;
+    --text: #f2f2f2;
+    --text-muted: #bdbdbd;
+    --border: #d8d8d8;
+    --border-soft: #5c5c5c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.window {
+    width: min(900px, calc(100% - 32px));
+    margin: 32px auto;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-strong);
+}
+
+.site-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.language-switcher a,
+.language-switcher span {
+    color: var(--text-muted);
+}
+
+.language-switcher a {
+    text-decoration: none;
+}
+
+.language-switcher a:hover {
+    color: var(--text);
+    background: transparent;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.language-switcher .active {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.language-switcher .separator {
+    color: var(--border-soft);
+}
+
+main {
+    padding: 28px;
+}
+
+footer {
+    padding: 14px 18px;
+    border-top: 1px solid var(--border-soft);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--text);
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    background: var(--text);
+    color: var(--bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Pretendard", sans-serif;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 0.3em;
+}
+
+code,
+pre {
+    font-family: "D2Coding", monospace;
+}
+
+code {
+    background: var(--surface-strong);
+    padding: 0.15em 0.4em;
+    border: 1px solid var(--border-soft);
+    border-radius: 3px;
+}
+
+pre {
+    overflow-x: auto;
+    padding: 16px;
+    border: 1px solid var(--border-soft);
+    background: #030303;
+    line-height: 1.6;
+}
+
+pre code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+blockquote {
+    margin-left: 0;
+    padding-left: 16px;
+    border-left: 3px solid var(--border);
+    color: var(--text-muted);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+th,
+td {
+    padding: 9px 10px;
+    border: 1px solid var(--border-soft);
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Keep the first column compact by default. */
+th:first-child,
+td:first-child {
+    width: 1%;
+    white-space: nowrap;
+}
+
+th {
+    background: var(--surface-strong);
+    font-weight: 600;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-soft);
+}
+</style>
+</head>
+<body>
+<div class="window">
+    <header class="titlebar">
+        <div class="site-title">Ospaggi</div>
+        <nav class="language-switcher" aria-label="Language">
+            <span class="active">한국어</span>
+<span class="separator">|</span>
+<a href="en/index.html" lang="en">English</a>
+        </nav>
+    </header>
+    <main>
+        <p>안녕하세요! Ospaggi입니다.<br>
+저는 2023년 부터 개발을 본격적으로 해오면서 많은 프로젝트에 참여해왔습니다.<br>
+현재도 게임 개발과 작곡 등을 주로 하며 열심히 활동하고 있습니다.<br>
+게임 개발 영상, 음악은 <a href="https://www.youtube.com/@Ospaggi">유튜브</a>에 주로 올라가며, 그림이나 잡담은 <a href="https://ospaggi.blogspot.com/">블로그</a>에 올리고 있습니다.<br>
+제가 만든 오픈 소스 프로젝트들은 주로 저의 <a href="https://github.com/Ospaggi">깃허브</a>에 올라갑니다.</p>
+<h2>주요 참여 프로젝트</h2>
+<table>
+<colgroup><col style="width: 20%"><col style="width: 20%"><col style="width: 60%"></colgroup>
+<thead><tr>
+<th>프로젝트</th>
+<th>참여년도</th>
+<th>설명</th>
+</tr></thead><tbody>
+<tr>
+<td><a href="https://github.com/freedoom/freedoom">FreeDM</a></td>
+<td>2023</td>
+<td>음악 기여</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lavenderdotpet/LibreQuake">LibreQuake</a></td>
+<td>2023</td>
+<td>효과음 기여, 사운드 버그 수정</td>
+</tr>
+<tr>
+<td><a href="https://www.indiedb.com/games/the-crystalled-bullets">Crystalled Bullets</a></td>
+<td>2023</td>
+<td>음악 참여</td>
+</tr>
+<tr>
+<td><a href="https://youtube.com/playlist?list=PLCkDndDNiqmvmwm3CnVv21zobEpHettCa">68</a></td>
+<td>2024</td>
+<td>게임 1인 개발중 (개발을 이어 받음)</td>
+</tr>
+<tr>
+<td><a href="https://ospaggi.itch.io/blood-money">Blood Money</a></td>
+<td>2025</td>
+<td>1인 개발</td>
+</tr>
+<tr>
+<td><a href="https://ospaggi.itch.io/tangsumussang">탕수무쌍</a></td>
+<td>2026</td>
+<td>1인 개발</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/@onionmixer">DKFS</a></td>
+<td>2026</td>
+<td>음악 참여</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Ospaggi/watcom-game-dev/releases/tag/Stable">던전 크롤러</a></td>
+<td>2026</td>
+<td>게임 플레이 프로그래밍 일부, 음악 참여, 효과음.</td>
+</tr>
+</tbody></table>
+<h2>바로가기</h2>
+<table>
+<colgroup><col style="width: 30%"><col style="width: 70%"></colgroup>
+<thead><tr>
+<th>사이트</th>
+<th>링크</th>
+</tr></thead><tbody>
+<tr>
+<td>Youtube</td>
+<td><a href="https://www.youtube.com/@Ospaggi">https://www.youtube.com/@Ospaggi</a></td>
+</tr>
+<tr>
+<td>itch.io</td>
+<td><a href="https://ospaggi.itch.io/">https://ospaggi.itch.io/</a></td>
+</tr>
+<tr>
+<td>Blogger</td>
+<td><a href="https://ospaggi.blogspot.com/">https://ospaggi.blogspot.com/</a></td>
+</tr>
+<tr>
+<td>Github</td>
+<td><a href="https://github.com/Ospaggi">https://github.com/Ospaggi</a></td>
+</tr>
+</tbody></table>
+    </main>
+    <footer>© 2026 Ospaggi. All rights reserved.</footer>
+</div>
+</body>
+</html>
